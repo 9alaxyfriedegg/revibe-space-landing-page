@@ -1,0 +1,43 @@
+---
+const navItems = [
+	{ href: '#problem', label: 'Problem' },
+	{ href: '#how-it-works', label: 'Cara Kerja' },
+	{ href: '#marketplace', label: 'Produk' },
+	{ href: '#pricing', label: 'Pricing' },
+	{ href: '#faq', label: 'FAQ' },
+];
+---
+
+<header
+	class="fixed inset-x-0 top-0 z-50 grid grid-cols-[1fr_auto] items-center gap-4 px-4 py-3 text-white transition-all duration-200 md:grid-cols-[auto_1fr_auto] md:px-8 lg:px-14"
+	data-site-header
+>
+	<a class="inline-flex items-center gap-2.5 whitespace-nowrap font-black" href="#top" aria-label="Roomly AI">
+		<span class="grid size-8 place-items-center rounded-lg bg-mint text-white">R</span>
+		<span>Roomly AI</span>
+	</a>
+
+	<nav class="hidden justify-self-center md:flex md:gap-5 lg:gap-7" aria-label="Navigasi utama">
+		{navItems.map((item) => <a class="text-sm font-bold hover:text-coral" href={item.href}>{item.label}</a>)}
+	</nav>
+
+	<a
+		class="inline-flex min-h-10 items-center justify-center rounded-lg border border-current px-4 text-sm font-extrabold"
+		href="#final-cta"
+	>
+		Coba Beta
+	</a>
+</header>
+
+<script>
+	const header = document.querySelector('[data-site-header]');
+	const updateHeader = () => {
+		header?.classList.toggle('bg-paper/95', window.scrollY > 24);
+		header?.classList.toggle('text-ink', window.scrollY > 24);
+		header?.classList.toggle('shadow-[0_10px_30px_rgba(23,23,23,0.08)]', window.scrollY > 24);
+		header?.classList.toggle('backdrop-blur-xl', window.scrollY > 24);
+	};
+
+	window.addEventListener('scroll', updateHeader, { passive: true });
+	updateHeader();
+</script>

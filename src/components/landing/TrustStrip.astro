@@ -1,0 +1,11 @@
+---
+const items = ['Shopee-ready', 'Tokopedia-ready', 'Budget match', 'Kos', 'Kamar', 'Ruang Tamu'];
+---
+
+<section class="grid border-b border-line bg-white sm:grid-cols-3 lg:grid-cols-6" aria-label="Marketplace dan kategori">
+	{items.map((item) => (
+		<span class="grid min-h-13 place-items-center border-b border-line px-4 text-center font-black text-muted sm:min-h-[70px] sm:border-r lg:border-b-0 last:border-r-0">
+			{item}
+		</span>
+	))}
+</section>
