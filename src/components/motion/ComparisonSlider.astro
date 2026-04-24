@@ -1,18 +1,18 @@
 <div
-	class="reveal-motion relative min-h-[280px] overflow-hidden rounded-lg bg-charcoal shadow-roomly aspect-[4/5] sm:aspect-[16/10] sm:min-h-[330px]"
+	class="reveal-motion relative min-h-[280px] overflow-hidden rounded-4xl bg-charcoal shadow-roomly aspect-[4/5] sm:aspect-[16/10] sm:min-h-[330px]"
 	data-comparison
 	data-reveal
 	data-reveal-scale
 >
 	<img
 		class="absolute inset-0 h-full w-full object-cover"
-		src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=1100&q=80"
+		src="/images/hero-before.jpg"
 		alt="Ruangan sebelum makeover"
 	/>
 	<div class="absolute inset-0 overflow-hidden [clip-path:inset(0_44%_0_0)]" data-comparison-after>
 		<img
 			class="h-full w-full object-cover"
-			src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1100&q=84"
+			src="/images/hero-after.png"
 			alt="Ruangan setelah makeover AI"
 		/>
 	</div>
@@ -21,17 +21,17 @@
 		type="range"
 		min="12"
 		max="88"
-		value="56"
+		value="60"
 		aria-label="Geser untuk membandingkan sebelum dan sesudah"
 		data-comparison-range
 	/>
 	<div class="absolute inset-y-0 left-[56%] z-20 w-[3px] bg-white" data-comparison-handle aria-hidden="true">
 		<div class="absolute left-1/2 top-1/2 size-11 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-white bg-ink/35"></div>
 	</div>
-	<span class="absolute left-4 top-4 z-40 rounded-lg bg-black/50 px-3 py-2 text-xs font-black text-white">
-		Before
+	<span class="absolute left-4 bottom-4 z-40 rounded-lg bg-black/50 px-3 py-2 text-sm font-black text-white">
+		<i class="ti ti-wand"></i> AI Makeover
 	</span>
-	<span class="absolute right-4 top-4 z-40 rounded-lg bg-black/50 px-3 py-2 text-xs font-black text-white">
-		AI Makeover
+	<span class="absolute right-4 top-4 z-40 rounded-lg bg-black/50 px-3 py-2 text-sm font-black text-white">
+		Before
 	</span>
 </div>
