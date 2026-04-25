@@ -24,35 +24,36 @@ const problems = [
 ---
 
 <section class="mx-auto w-full flex justify-center" id="problem">
-	<div class="max-w-screen-2xl py-18 md:px-8 md:py-24">
-		<Reveal className="mb-10 flex flex-row justify-between w-full md:mb-14">
-			<div class="title max-w-1/2">
+	<div class="max-w-screen-2xl py-18 px-4 md:px-8 md:py-24">
+		<Reveal className="mb-10 flex flex-col lg:flex-row justify-between w-full md:mb-14">
+			<div class="title w-full lg:max-w-1/2">
 				<p class="mb-3.5 text-sm font-black uppercase tracking-[0.08em] text-coral">Kami tahu masalahmu!</p>
 				<h2 class="text-[clamp(2rem,9vw,4.3rem)] font-black leading-none tracking-normal text-charcoal">
 					Pengen ruangan <span class="text-primary italic">aesthetic</span>, tapi bingung mulai dari mana.
 				</h2>
 			</div>
-			<p class="text-base max-w-2xl text-slate-500 mt-10">
+			<p class="text-base max-w-2xl text-slate-500 mt-10 hidden md:block">
 				Banyak orang tahu ruang seperti apa yang mereka inginkan, tapi bingung bagaimana memulainya. Inspirasi tersebar di Pinterest, TikTok, dan berbagai marketplace, namun sulit menentukan mana yang benar-benar cocok untuk ukuran, layout, dan gaya ruang sendiri. Setelah menemukan style yang disukai, proses mencari produk yang matching pun sering terasa melelahkan. Belum lagi kekhawatiran salah beli yang membuat keputusan akhirnya terus tertunda.
 			</p>
 		</Reveal>
 
-		<Reveal className='rounded-4xl shadow-sm bg-white p-8 mb-10 lg:mb-14'>
-			<div class="grid grid-cols-2 gap-8">
-				<div class="flex flex-col gap-4">
+		<Reveal className='rounded-4xl shadow-sm bg-white p-4 md:p-8 mb-10 lg:mb-14'>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+				<div class="col-span-2 lg:col-span-1 flex flex-col gap-4">
 					{problems.map((problem, index) => (
-						<div class={`problem-card flex flex-row gap-4 items-start p-5 rounded-2xl hover:bg-gradient-to-br from-secondary to-secondary/80 hover:shadow-xl duration-300 transition-all cursor-pointer ${index === 0 ? 'bg-gradient-to-br from-secondary to-secondary/80 shadow-xl' : '' }`} data-problem-index={index}>
-							<div class="flex-shrink-0 p-2 rounded-lg bg-charcoal text-white text-2xl flex items-center justify-center h-fit">
+						<div class={`problem-card flex flex-row gap-3 md:gap-4 items-start p-4 md:p-5 rounded-xl md:rounded-2xl hover:bg-gradient-to-br from-secondary to-secondary/80 hover:shadow-xl duration-300 transition-all cursor-pointer ${index === 0 ? 'bg-gradient-to-br from-secondary to-secondary/80 shadow-xl' : '' }`} data-problem-index={index}>
+							<img src={problem.image} alt={problem.title} class="block lg:hidden w-16 h-16 md:w-20 md:h-20 object-cover rounded-lg" />
+							<div class="hidden lg:flex items-center justify-center flex-shrink-0 p-2 rounded-lg bg-charcoal text-white text-lg md:text-2xl h-fit min-w-fit">
 								<i class={`ti ${problem.icon}`}></i>
 							</div>
 							<div class="flex-1">
-								<h3 class="text-lg font-bold leading-tight text-charcoal mb-1">{problem.title}</h3>
-								<p class="text-sm leading-relaxed text-charcoal">{problem.copy}</p>
+								<h3 class="text-base md:text-lg font-bold leading-tight text-charcoal mb-1">{problem.title}</h3>
+								<p class="text-xs md:text-sm leading-relaxed text-charcoal">{problem.copy}</p>
 							</div>
 						</div>
 					))}
 				</div>
-				<div class="w-full h-full p-8 rounded-2xl flex items-center justify-center relative overflow-hidden">
+				<div class="w-full h-48 md:h-80 lg:h-full p-4 md:p-8 rounded-2xl hidden lg:flex items-center justify-center relative overflow-hidden">
 					{problems.map((problem, index) => (
 						<img 
 							src={problem.image} 
