@@ -1,5 +1,5 @@
 <div
-	class="reveal-motion relative min-h-[280px] overflow-hidden rounded-4xl bg-charcoal shadow-roomly aspect-[4/5] sm:aspect-[16/10] sm:min-h-[330px]"
+	class="reveal-motion relative min-h-[280px] overflow-hidden rounded-4xl bg-charcoal shadow-roomly aspect-[4/5] sm:aspect-[16/10] sm:min-h-[330px] group"
 	data-comparison
 	data-reveal
 	data-reveal-scale
@@ -15,9 +15,61 @@
 			src="/images/hero-after.png"
 			alt="Ruangan setelah makeover AI"
 		/>
+		
+		<!-- Product Hotspots -->
+		<!-- Chair Product -->
+		<div
+			class="product-hotspot group/hotspot absolute z-50 cursor-pointer transition-all hover:scale-110"
+			data-product="chair"
+			data-x="35%"
+			data-y="55%"
+			style="left: 35%; top: 55%; transform: translate(-50%, -50%);"
+		>
+			<div class="size-8 sm:size-10 rounded-full border-2 border-primary bg-primary/20 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
+				<i class="ti ti-plus text-white text-base sm:text-lg"></i>
+			</div>
+			
+			<!-- Product Card -->
+			<div class="product-card absolute bottom-0 opacity-0 pointer-events-none group-hover/hotspot:opacity-100 group-hover/hotspot:pointer-events-auto transition-opacity duration-200 z-50 whitespace-nowrap left-full sm:right-full sm:left-auto ml-2 sm:mr-2">
+				<div class="bg-white/30 backdrop-blur-sm rounded-lg p-2 sm:p-3 shadow-xl border border-white/50">
+					<p class="text-xs sm:text-sm font-bold text-gray-900">Minimalist Chair</p>
+					<p class="text-xs text-gray-600 mt-0.5 sm:mt-1">Rp 249.000</p>
+					<button class="mt-1.5 sm:mt-2 w-full bg-primary hover:bg-amber-900 text-white text-xs font-medium py-1 sm:py-1.5 rounded-md transition flex items-center justify-center gap-1">
+						<i class="ti ti-shopping-cart text-xs"></i>
+						Beli
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Rug Product -->
+		<div
+			class="product-hotspot group/hotspot absolute z-50 cursor-pointer transition-all hover:scale-110"
+			data-product="rug"
+			data-x="45%"
+			data-y="75%"
+			style="left: 45%; top: 75%; transform: translate(-50%, -50%);"
+		>
+			<div class="size-8 sm:size-10 rounded-full border-2 border-primary bg-primary/20 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
+				<i class="ti ti-plus text-white text-base sm:text-lg"></i>
+			</div>
+			
+			<!-- Product Card -->
+			<div class="product-card absolute top-0 opacity-0 pointer-events-none group-hover/hotspot:opacity-100 group-hover/hotspot:pointer-events-auto transition-opacity duration-200 z-50 whitespace-nowrap left-full sm:right-full sm:left-auto ml-2 sm:mr-2">
+				<div class="bg-white/30 backdrop-blur-sm rounded-lg p-2 sm:p-3 shadow-xl border border-white/50">
+					<p class="text-xs sm:text-sm font-bold text-gray-900">Wool Area Rug</p>
+					<p class="text-xs text-gray-600 mt-0.5 sm:mt-1">Rp 899.000</p>
+					<button class="mt-1.5 sm:mt-2 w-full bg-primary hover:bg-amber-900 text-white text-xs font-medium py-1 sm:py-1.5 rounded-md transition flex items-center justify-center gap-1">
+						<i class="ti ti-shopping-cart text-xs"></i>
+						Beli
+					</button>
+				</div>
+			</div>
+		</div>
 	</div>
+	
 	<input
-		class="absolute inset-0 z-30 h-full w-full cursor-ew-resize opacity-0"
+		class="absolute inset-0 z-10 h-full w-full cursor-ew-resize opacity-0 pointer-events-none"
 		type="range"
 		min="12"
 		max="88"
@@ -35,3 +87,69 @@
 		Before
 	</span>
 </div>
+
+<script>
+	// Handle product card hover and comparison slider interaction
+	const comparisonContainer = document.querySelector('[data-comparison]');
+	const afterLayer = document.querySelector('[data-comparison-after]');
+	const handle = document.querySelector('[data-comparison-handle]');
+
+	let dragging = false;
+
+	function updateSlider(percent) {
+		percent = Math.max(12, Math.min(88, percent));
+
+		afterLayer.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+		handle.style.left = `${percent}%`;
+	}
+
+	comparisonContainer.addEventListener('mousedown', () => {
+		dragging = true;
+	});
+
+	document.addEventListener('mouseup', () => {
+		dragging = false;
+	});
+
+	comparisonContainer.addEventListener('mousemove', (e) => {
+
+		if (!dragging) return;
+
+		// jangan drag kalau hover hotspot
+		if (e.target.closest('.product-hotspot')) return;
+
+		const rect = comparisonContainer.getBoundingClientRect();
+
+		const percent =
+			((e.clientX - rect.left) / rect.width) * 100;
+
+		updateSlider(percent);
+	});
+
+	comparisonContainer.addEventListener('touchstart', (e) => {
+		if (e.target.closest('.product-hotspot')) return;
+		dragging = true;
+	});
+
+	document.addEventListener('touchend', () => {
+		dragging = false;
+	});
+
+	comparisonContainer.addEventListener('touchmove', (e)=>{
+
+		if (!dragging) return;
+
+		if (e.target.closest('.product-hotspot')) {
+			dragging = false;
+			return;
+		}
+
+		const rect = comparisonContainer.getBoundingClientRect();
+
+		const percent =
+			((e.touches[0].clientX - rect.left) / rect.width) * 100;
+
+		updateSlider(percent);
+
+	});
+</script>

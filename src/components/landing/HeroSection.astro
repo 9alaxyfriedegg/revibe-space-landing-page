@@ -3,86 +3,108 @@ import Reveal from '../motion/Reveal.astro';
 import ComparisonSlider from '../motion/ComparisonSlider.astro';
 ---
 
-<section class="relative min-h-screen bg-neutral px-4 pb-16 pt-32 sm:px-6 md:px-8 lg:px-12">
-	<div class="mx-auto max-w-screen-xl text-center">
-		<!-- Notification Badge -->
-		<Reveal>
-			<div class="mb-8 flex justify-center">
-				<span class="inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-100 animate-pulse px-4 py-2 text-green-900 text-sm font-semibold text-gray-700">
-					<i class="ti ti-sparkles text-2xl"></i>
-					AI Room Redesign + Shoppable Products
-				</span>
-			</div>
-		</Reveal>
-
-		<!-- Main Headline -->
-		<Reveal delay={0.1}>
-			<h1 class="text-4xl font-black leading-tight tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
-				Buat ruanganmu sesuai dengan <i class="text-primary">vibe</i> yang kamu mau, tanpa ribet!
-			</h1>
-		</Reveal>
-
-		<!-- Description -->
-		<Reveal delay={0.2}>
-			<p class="mx-auto mt-6 max-w-2xl text-lg text-gray-600">
-				Upload foto ruanganmu dan biarkan AI mengubahnya jadi ruang <i>aesthetic</i> dengan produk pilihan yang bisa langsung kamu beli.
-			</p>
-		</Reveal>
-
-		<!-- CTA Buttons -->
-		<Reveal delay={0.3}>
-			<div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-				<a
-					href="#final-cta"
-					class="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3 text-white transition hover:bg-amber-900 hover:-translate-y-0.5"
-				>
-					<i class="ti ti-sparkles mr-1"></i>
-					Coba Gratis
-				</a>
-				<a
-					href="#solution"
-					class="inline-flex items-center justify-center rounded-full border-2 border-gray-300 px-8 py-3 text-gray-900 transition hover:border-gray-400 hover:-translate-y-0.5"
-				>
-					<i class="ti ti-player-play mr-2"></i>
-					Lihat Caranya
-				</a>
-			</div>
-		</Reveal>
+<section class="min-h-screen w-full flex flex-col justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-20 md:py-20 gap-8 md:gap-12" id="top">
+	<div class="relative isolate lg:px-8">
+		<div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+			<div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#A0522D] to-[#FFD966] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"></div>
+		</div>
+		<div aria-hidden="true" class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
+			<div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-[calc(50%+3rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-[#A0522D] to-[#FFD966] opacity-30 sm:left-[calc(50%+36rem)] sm:w-288.75"></div>
+		</div>
 	</div>
+	
+	<div class="relative flex flex-col lg:flex-row lg:gap-15 max-w-screen-2xl mx-auto w-full">
+		<!-- Content Section -->
+		<div class="w-full lg:max-w-[50%]">
+			<!-- Notification Badge -->
+			<Reveal>
+				<div class="mb-6 md:mb-8">
+					<span class="inline-flex items-center gap-2 rounded-full bg-secondary px-3 sm:px-4 py-2 text-gray-900 text-xs sm:text-sm font-light">
+						<i class="ti ti-sparkles text-lg sm:text-xl"></i>
+						AI Room Redesign + Shoppable Products
+					</span>
+				</div>
+			</Reveal>
 
-	<!-- Before/After Comparison Section -->
-	<div class="mt-16 mb-32 w-full mx-auto">
-		<div class="relative max-w-screen-xl mx-auto">
-			<Reveal delay={0.8} className="absolute z-10 -top-40 -left-30 bg-white/30 backdrop-blur-sm rounded-4xl p-8 shadow-lg">
-				<img src="/images/architect-lamp.png" class="w-40 bg-[#E5D3B3] rounded-2xl p-8 object-cover" />
-				<div class="flex flex-col mt-5">
-					<span class="text-slate-900">Real Product</span>
-					<span class="text-xl font-semibold text-slate-900">Architect Lamp</span>
+			<!-- Main Headline -->
+			<Reveal delay={0.1}>
+				<h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-gray-900">
+					Buat ruanganmu sesuai dengan <i class="text-primary">vibe</i> yang kamu mau, tanpa ribet!
+				</h1>
+			</Reveal>
+
+			<!-- Description -->
+			<Reveal delay={0.2}>
+				<p class="mt-4 sm:mt-6 max-w-2xl text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
+					Upload foto ruanganmu dan biarkan AI mengubahnya jadi ruang <i>aesthetic</i> dengan produk pilihan yang bisa langsung kamu beli.
+				</p>
+			</Reveal>
+
+			<!-- CTA Buttons -->
+			<Reveal delay={0.3}>
+				<div class="mt-8 sm:mt-10 flex flex-col gap-3 sm:gap-4 sm:flex-row">
+					<a
+						href="#final-cta"
+						class="inline-flex items-center justify-center rounded-full bg-primary px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-medium text-white transition hover:bg-amber-900 hover:-translate-y-0.5 active:translate-y-0"
+					>
+						<i class="ti ti-sparkles mr-1 sm:mr-2"></i>
+						Coba Gratis
+					</a>
+					<a
+						href="#solution"
+						class="inline-flex items-center justify-center rounded-full border-2 border-gray-300 px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-medium text-gray-900 transition hover:border-gray-400 hover:bg-gray-50 hover:-translate-y-0.5 active:translate-y-0"
+					>
+						<i class="ti ti-player-play mr-1.5 sm:mr-2"></i>
+						Lihat Caranya
+					</a>
 				</div>
 			</Reveal>
-			<Reveal delay={0.6} className="w-full max-w-screen-xl rounded-2xl overflow-hidden shadow-2xl">
-				<ComparisonSlider
-					beforeImage="https://images.unsplash.com/photo-1517457373614-b7152f800fd1?auto=format&fit=crop&w=1200&q=82"
-					afterImage="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=82"
-					beforeLabel="BEFORE"
-					afterLabel="AFTER AI UPGRADE"
-				/>
-			</Reveal>
-			<Reveal className="absolute z-10 -bottom-10 -right-30 flex flex-col items-center gap-4 bg-white/30 backdrop-blur-sm rounded-4xl p-8 shadow-lg">
-				<div class="flex item-center gap-2">
-					<i class="ti ti-palette text-5xl"></i>
-					<div class="flex flex-col">
-						<span class="text-slate-900">Palette Generated</span>
-						<span class="text-xl font-semibold text-slate-900">Warm Minimalist</span>
+		</div>
+
+		<!-- Before/After Comparison Section -->
+		<div class="w-full lg:max-w-[50%] mt-8 md:mt-12 lg:mt-0 pb-8 md:pb-12">
+			<div class="relative w-full">
+				<!-- Floating Card - Top Left (Hidden on Mobile & Tablet) -->
+				<Reveal delay={0.8} className="hidden xl:flex absolute z-10 -top-10 -left-10 bg-white/30 backdrop-blur-sm rounded-3xl p-4 shadow-lg">
+					<img src="/images/architect-lamp.png" class="w-24 h-24 bg-white/70 rounded-xl p-2 object-cover object-top mr-3" />
+					<div class="flex flex-col justify-center">
+						<span class="text-slate-900 text-xs font-light">Real Product</span>
+						<span class="font-bold text-slate-900 text-sm">Architect Lamp</span>
+						<span class="text-xs">Rp 199.000</span>
+						<span class="w-full bg-primary text-white py-1 px-2 text-center text-[8px] rounded-full mt-1">
+							<i class="ti ti-shopping-cart"></i>
+							Buy Now
+						</span>
 					</div>
-				</div>
-				<div class="flex items-center justify-between gap-2">
-					<div class="size-10 rounded-xl bg-[#E5D3B3]"></div>
-					<div class="size-10 rounded-xl bg-[#BC9F77]"></div>
-					<div class="size-10 rounded-xl bg-[#D1D1CE]"></div>	
-					<div class="size-10 rounded-xl bg-[#2C2C2C]"></div>	
-				</div>
-			</Reveal>
+				</Reveal>
+
+				<!-- Comparison Slider -->
+				<Reveal delay={0.6} className="w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-lg md:shadow-2xl">
+					<ComparisonSlider
+						beforeImage="https://images.unsplash.com/photo-1517457373614-b7152f800fd1?auto=format&fit=crop&w=1200&q=82"
+						afterImage="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=82"
+						beforeLabel="BEFORE"
+						afterLabel="AFTER AI UPGRADE"
+					/>
+				</Reveal>
+
+				<!-- Floating Card - Bottom Right (Hidden on Mobile, Visible on Tablet+) -->
+				<Reveal delay={0.7} className="hidden md:flex absolute z-10 -bottom-6 -right-3 lg:-bottom-10 lg:-right-8 flex-col items-center gap-2 md:gap-3 lg:gap-4 bg-white/30 backdrop-blur-sm rounded-2xl md:rounded-2xl lg:rounded-3xl p-2.5 md:p-3 lg:p-4 shadow-lg">
+					<div class="flex items-center gap-1.5 md:gap-2">
+						<i class="ti ti-palette text-xl md:text-3xl lg:text-4xl text-primary"></i>
+						<div class="flex flex-col">
+							<span class="text-slate-900 text-xs font-medium">Palette Generated</span>
+							<span class="font-bold text-slate-900 text-xs md:text-sm">Warm Minimalist</span>
+						</div>
+					</div>
+					<div class="flex items-center justify-between gap-1.5 md:gap-2">
+						<div class="size-5 md:size-6 lg:size-8 rounded-lg md:rounded-lg lg:rounded-xl bg-[#E5D3B3]"></div>
+						<div class="size-5 md:size-6 lg:size-8 rounded-lg md:rounded-lg lg:rounded-xl bg-[#BC9F77]"></div>
+						<div class="size-5 md:size-6 lg:size-8 rounded-lg md:rounded-lg lg:rounded-xl bg-[#D1D1CE]"></div>	
+						<div class="size-5 md:size-6 lg:size-8 rounded-lg md:rounded-lg lg:rounded-xl bg-[#2C2C2C]"></div>	
+					</div>
+				</Reveal>
+			</div>
 		</div>
 	</div>
 </section>
