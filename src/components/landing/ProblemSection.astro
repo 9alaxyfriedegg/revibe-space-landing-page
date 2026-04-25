@@ -4,36 +4,93 @@ import Reveal from '../motion/Reveal.astro';
 const problems = [
 	{
 		title: 'Inspirasi terlalu banyak',
-		copy: 'Pinterest dan TikTok penuh ide, tapi sulit tahu mana yang cocok untuk ukuran dan kondisi ruangan sendiri.',
+		icon: 'ti-bulb',
+		image: '/images/problem-1.jpg',
+		copy: 'Pinterest dan TikTok penuh ide, tapi sulit tahu mana yang benar-benar cocok untuk ukuran, layout, dan kebutuhan ruangmu sendiri. Semakin banyak referensi yang dilihat, semakin mudah overthinking dan bingung menentukan titik mulai.',
 	},
 	{
 		title: 'Produknya susah dicari',
-		copy: 'Sudah suka satu style, lalu habis waktu cari sofa, lampu, karpet, meja, dan dekorasi yang mirip.',
+		icon: 'ti-search',
+		image: '/images/problem-2.jpeg',
+		copy: 'Sudah suka satu style, tapi mencari sofa, lampu, karpet, meja, dan dekor yang matching sering makan waktu. Belum tentu produk yang ditemukan punya warna, ukuran, atau harga yang sesuai dengan ekspektasi.',
 	},
 	{
 		title: 'Takut salah beli',
-		copy: 'Warna, ukuran, dan vibe bisa meleset. Akhirnya keranjang penuh, tapi checkout ditunda terus.',
+		icon: 'ti-shopping-cart',
+		image: '/images/problem-3.jpeg',
+		copy: 'Warna, ukuran, dan vibe bisa meleset saat produk datang, apalagi kalau beli tanpa visualisasi yang jelas. Akhirnya banyak barang cuma masuk keranjang, wishlist, atau checkout terus ditunda karena masih ragu.',
 	},
 ];
 ---
 
-<section class="px-4 py-18 sm:px-6 md:px-8 md:py-24 lg:px-18 xl:px-20" id="problem">
-	<Reveal className="mb-10 max-w-4xl md:mb-14">
-		<p class="mb-3.5 text-xs font-black uppercase tracking-[0.08em] text-coral">Problem</p>
-		<h2 class="text-[clamp(2rem,9vw,4.3rem)] font-black leading-none tracking-normal">
-			Pengen ruangan bagus, tapi bingung mulai dari mana.
-		</h2>
-	</Reveal>
+<section class="mx-auto w-full flex justify-center" id="problem">
+	<div class="max-w-screen-2xl py-18 md:px-8 md:py-24">
+		<Reveal className="mb-10 flex flex-row justify-between w-full md:mb-14">
+			<div class="title max-w-1/2">
+				<p class="mb-3.5 text-sm font-black uppercase tracking-[0.08em] text-coral">Kami tahu masalahmu!</p>
+				<h2 class="text-[clamp(2rem,9vw,4.3rem)] font-black leading-none tracking-normal text-charcoal">
+					Pengen ruangan <span class="text-primary italic">aesthetic</span>, tapi bingung mulai dari mana.
+				</h2>
+			</div>
+			<p class="text-base max-w-2xl text-slate-500 mt-10">
+				Banyak orang tahu ruang seperti apa yang mereka inginkan, tapi bingung bagaimana memulainya. Inspirasi tersebar di Pinterest, TikTok, dan berbagai marketplace, namun sulit menentukan mana yang benar-benar cocok untuk ukuran, layout, dan gaya ruang sendiri. Setelah menemukan style yang disukai, proses mencari produk yang matching pun sering terasa melelahkan. Belum lagi kekhawatiran salah beli yang membuat keputusan akhirnya terus tertunda.
+			</p>
+		</Reveal>
 
-	<div class="grid gap-4 lg:grid-cols-3">
-		{problems.map((problem, index) => (
-			<Reveal delay={index * 0.08} className="min-h-64 rounded-lg border border-line bg-white p-6">
-				<span class="mb-10 grid size-11 place-items-center rounded-lg bg-soft font-black text-mint-dark">
-					{String(index + 1).padStart(2, '0')}
-				</span>
-				<h3 class="text-xl font-black leading-tight">{problem.title}</h3>
-				<p class="mt-4 leading-relaxed text-muted">{problem.copy}</p>
-			</Reveal>
-		))}
+		<Reveal className='rounded-4xl shadow-sm bg-white p-8 mb-10 lg:mb-14'>
+			<div class="grid grid-cols-2 gap-8">
+				<div class="flex flex-col gap-4">
+					{problems.map((problem, index) => (
+						<div class={`problem-card flex flex-row gap-4 items-start p-5 rounded-2xl hover:bg-gradient-to-br from-secondary to-secondary/80 hover:shadow-xl duration-300 transition-all cursor-pointer ${index === 0 ? 'bg-gradient-to-br from-secondary to-secondary/80 shadow-xl' : '' }`} data-problem-index={index}>
+							<div class="flex-shrink-0 p-2 rounded-lg bg-charcoal text-white text-2xl flex items-center justify-center h-fit">
+								<i class={`ti ${problem.icon}`}></i>
+							</div>
+							<div class="flex-1">
+								<h3 class="text-lg font-bold leading-tight text-charcoal mb-1">{problem.title}</h3>
+								<p class="text-sm leading-relaxed text-charcoal">{problem.copy}</p>
+							</div>
+						</div>
+					))}
+				</div>
+				<div class="w-full h-full p-8 rounded-2xl flex items-center justify-center relative overflow-hidden">
+					{problems.map((problem, index) => (
+						<img 
+							src={problem.image} 
+							class={`problem-image problem-image-${index} w-full h-full object-cover rounded-2xl absolute inset-0 transition-opacity duration-300 ${index === 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+							alt={problem.title}
+						/>
+					))}
+				</div>
+			</div>
+		</Reveal>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const problemCards = document.querySelectorAll('.problem-card');
+		
+		problemCards.forEach(card => {
+			card.addEventListener('mouseenter', () => {
+				const index = card.getAttribute('data-problem-index');
+				document.querySelectorAll('.problem-card').forEach(c => {
+					c.classList.remove('bg-gradient-to-br', 'from-secondary', 'to-secondary/80', 'shadow-xl');
+				});
+
+				// Hide all images
+				document.querySelectorAll('.problem-image').forEach(img => {
+					img.classList.remove('opacity-100');
+					img.classList.add('opacity-0', 'pointer-events-none');
+				});
+				
+				// Show the corresponding image
+				const activeImage = document.querySelector(`.problem-image-${index}`);
+				if (activeImage) {
+					card.classList.add('bg-gradient-to-br', 'from-secondary', 'to-secondary/80', 'shadow-xl');
+					activeImage.classList.remove('opacity-0', 'pointer-events-none');
+					activeImage.classList.add('opacity-100');
+				}
+			});
+		});
+	});
+</script>
 	</div>
 </section>
