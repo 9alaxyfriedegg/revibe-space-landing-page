@@ -1,11 +1,40 @@
 ---
-const items = ['Shopee-ready', 'Tokopedia-ready', 'Budget match', 'Kos', 'Kamar', 'Ruang Tamu'];
+import Reveal from "../motion/Reveal.astro";
+
+const items = [
+	{
+		name: "Belanja Langsung Mudah",
+		description: "Lihat hasil redesign ruangmu dan langsung beli semua produk yang digunakan tanpa ribet",
+		logo: "shopping-cart"
+	},
+	{
+		name: "Produk Nyata dan Terpercaya",
+		description: "Semua produk berasal dari katalog brand nyata, bukan sekadar hasil generate visual AI",
+		logo: "circle-check"
+	},
+	{
+		name: "Pilih Tema Ruangan",
+		description: "Tentukan style ruang sesuai selera, dari minimalis, modern, hingga aesthetic favoritmu",
+		logo: "palette"
+	},
+	{
+		name: "Pilih Jenis Ruangan",
+		description: "Pilih ruang yang ingin diubah, mulai dari kamar, ruang tamu, hingga workspace",
+		logo: "home"
+	}
+];
 ---
 
-<section class="grid border-b border-line bg-white sm:grid-cols-3 lg:grid-cols-6" aria-label="Marketplace dan kategori">
-	{items.map((item) => (
-		<span class="grid min-h-13 place-items-center border-b border-line px-4 text-center font-black text-muted sm:min-h-[70px] sm:border-r lg:border-b-0 last:border-r-0">
-			{item}
-		</span>
-	))}
+<section class="px-8 py-12 mx-auto bg-primary border-y border-slate-300" aria-label="Trust Strip">
+	<div class="grid grid-cols-2 lg:grid-cols-4 px-3">
+		{items.map((item, index) => (
+			<Reveal delay={index * 0.1} className="flex flex-col py-4 px-8">
+				<div class="px-3 py-2 bg-secondary text-primary w-fit mb-2 rounded-xl text-2xl">
+					<i class={`ti ti-${item.logo}`}></i>
+				</div>
+				<h3 class="text-base font-bold text-white">{item.name}</h3>
+				<p class="text-sm font-light text-slate-100">{item.description}</p>
+			</Reveal>
+		))}
+	</div>
 </section>
