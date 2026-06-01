@@ -1,31 +1,33 @@
 ---
-import Reveal from '../motion/Reveal.astro';
-
 const steps = [
-	['Upload foto ruangan', 'Ambil foto dari sudut paling jelas. Cocok untuk kamar pribadi, kos, apartemen, atau ruang keluarga.'],
-	['Pilih style dan budget', 'Tentukan vibe aesthetic, japandi, minimal, colorful, atau luxury. Budget membantu rekomendasi tetap realistis.'],
-	['Generate makeover', 'AI membuat beberapa opsi tampilan yang mempertahankan karakter ruangan asli.'],
-	['Checkout produk', 'Lihat listing produk yang mirip dengan hasil desain dan buka marketplace pilihanmu.'],
+  ["Upload foto ruangan", "Ambil foto dari sudut paling jelas. Foto biasa dari HP sudah cukup untuk memulai."],
+  ["Pilih style dan budget", "Tentukan vibe, jenis ruang, dan kisaran harga supaya rekomendasi tetap realistis."],
+  ["Generate makeover", "AI membuat beberapa opsi tampilan yang masih terasa seperti ruangmu sendiri."],
+  ["Checkout produk", "Buka daftar barang prioritas, match score, estimasi harga, dan link marketplace."]
 ];
 ---
 
-<section class="bg-charcoal px-4 py-18 text-white sm:px-6 md:px-8 md:py-24 lg:px-18 xl:px-20" id="how-it-works">
-	<Reveal className="mb-10 max-w-4xl md:mb-14">
-		<p class="mb-3.5 text-xs font-black uppercase tracking-[0.08em] text-[#ffbf9f]">Cara kerja</p>
-		<h2 class="text-[clamp(2rem,9vw,4.3rem)] font-black leading-none tracking-normal">
-			Dari foto ruangan ke checkout produk.
-		</h2>
-	</Reveal>
-
-	<div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-		{steps.map(([title, copy], index) => (
-			<Reveal delay={index * 0.08} className="min-h-70 rounded-lg border border-white/15 p-6">
-				<span class="mb-11 grid size-11 place-items-center rounded-lg bg-mint font-black text-white">
-					{String(index + 1).padStart(2, '0')}
-				</span>
-				<h3 class="text-xl font-black leading-tight">{title}</h3>
-				<p class="mt-4 leading-relaxed text-white/70">{copy}</p>
-			</Reveal>
-		))}
-	</div>
+<section id="cara-kerja" class="section-pad">
+  <div class="container-shell grid gap-10 lg:grid-cols-[0.88fr_1.12fr]">
+    <div class="reveal lg:sticky lg:top-28 lg:self-start">
+      <div class="eyebrow"><i class="ti ti-route"></i>Proses Transformasi</div>
+      <h2 class="typeset-title mt-6">
+        Empat langkah yang terasa ringan.
+      </h2>
+      <p class="typeset-lead mt-6">
+        Flow dibuat untuk orang yang ingin ruangnya naik level tanpa harus jadi interior designer dulu.
+      </p>
+    </div>
+    <div class="space-y-4">
+      {steps.map(([title, body], index) => (
+        <article class="reveal grid gap-5 rounded-[22px] border border-black/10 bg-[#fffaf1]/70 p-5 md:grid-cols-[120px_1fr]">
+          <div class="flex h-24 items-center justify-center rounded-[18px] bg-[#ffb22c] text-4xl font-black text-[#261600]">0{index + 1}</div>
+          <div class="flex flex-col justify-center">
+            <h3 class="typeset-card-title">{title}</h3>
+            <p class="typeset-body mt-2 max-w-[56ch]">{body}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
 </section>

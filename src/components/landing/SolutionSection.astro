@@ -1,258 +1,31 @@
 ---
-// SolutionSection-Modern.astro
-// Modern design inspired by reference with custom color theme and animations
+const features = [
+  ["AI Makeover", "Visualisasi ulang ruangan dari foto asli, tetap mempertahankan layout penting.", "ti-wand"],
+  ["Smart Match", "AI mencocokkan style, prioritas barang, ukuran, warna, dan batas budget.", "ti-adjustments-heart"],
+  ["Real Product", "Rekomendasi diarahkan ke produk nyata dari katalog dan marketplace.", "ti-armchair-2"],
+  ["Easy Shopping", "Simpan item, bandingkan harga, lalu lanjut ke link belanja yang relevan.", "ti-shopping-cart"]
+];
 ---
 
-<section class="relative w-full min-h-screen overflow-hidden py-28 px-4 sm:px-6 lg:px-12" id="solution">
-  <!-- Animated gradient background -->
-  <!-- <div class="fixed inset-0 -z-10 bg-gradient-to-br from-light-brown via-yellow-50 to-light-brown opacity-50"></div> -->
-
-  <!-- Decorative blur orbs -->
-  <!-- <div class="absolute -top-40 -left-40 w-80 h-80 rounded-full bg-primary/5 blur-3xl -z-10"></div>
-  <div class="absolute -bottom-32 -right-48 w-96 h-96 rounded-full bg-secondary/5 blur-3xl -z-10"></div> -->
-
-  <div class="max-w-screen-2xl mx-auto relative z-10">
-    <div class="flex justify-center items-center mb-16 lg:mb-0">
-      <div class="flex flex-col justify-center items-center space-y-8 animate-fade-in-left">
-
-		<div class="px-8 py-2 bg-secondary rounded-full">
-			<h2 class="text-sm font-light text-primary">
-				<i class="ti ti-image-generation"></i> Solutions
-			</h2>
-		</div>
-
-        <!-- Main Title -->
-        <div class="space-y-2 text-center">
-          <h1 class="text-5xl sm:text-6xl lg:text-6xl font-black text-charcoal leading-tight">
-            Wujudkan ruang
-            <span class="bg-gradient-to-r from-primary via-amber-700 to-primary bg-clip-text text-transparent">
-              aesthetic
-            </span>
-			<br/>
-             <span class="underline">tanpa overthinking</span> cari inspirasi dan produk
-          </h1>
-        </div>
-
-        <!-- Description -->
-        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed text-center max-w-lg">
-          Teknologi AI terdepan membantu kamu merancang ruang impian dengan presisi tinggi dan rekomendasi produk yang dapat langsung dibeli.
-        </p>
-      </div>
+<section id="solusi" class="section-pad bg-[#22211f] text-paper">
+  <div class="container-shell">
+    <div class="reveal max-w-[760px]">
+      <div class="eyebrow border-white/14 bg-white/8 text-[#ffdda0]"><i class="ti ti-sparkles"></i>Solusi</div>
+      <h2 class="typeset-title mt-6 max-w-[11ch] text-paper">
+        Dari foto kamar ke product board yang bisa dipakai belanja.
+      </h2>
+      <p class="typeset-lead mt-6 text-[#d7cdbf]">
+        RE\VIBE SPACE bukan hanya membuat gambar cantik. Setiap makeover dirancang untuk membantu kamu mengambil keputusan belanja dengan lebih percaya diri.
+      </p>
     </div>
-
-    <!-- Solutions Cards Grid -->
-    <div class="mt-8 pt-2">
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-			
-			<!-- Card 1: AI Makeover -->
-			<div class="group relative bg-white/80 backdrop-blur-sm border border-primary/10 rounded-4xl p-8 transition-all duration-500 hover:shadow-lg hover:-translate-y-1 overflow-hidden animate-slide-in-up" style="animation-delay: 0.1s;">
-				<!-- Gradient overlay on hover -->
-				<div class="absolute inset-0 bg-gradient-to-br from-secondary/40 via-transparent to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg -z-10"></div>
-			
-				<!-- Card content -->
-				<div class="relative z-10 h-full flex flex-col">
-					<!-- Icon -->
-					<div class="w-10 h-10 rounded-md bg-gradient-to-br from-secondary to-yellow-400 flex items-center justify-center text-xl mb-2 group-hover:scale-105 group-hover:rotate-6 transition-transform duration-300 flex-shrink-0">
-					🤖
-					</div>
-			
-					<!-- Title -->
-					<h3 class="text-xl font-bold text-primary mb-1.5 group-hover:text-secondary transition-colors duration-300">
-					AI Makeover
-					</h3>
-			
-					<!-- Description -->
-					<p class="text-gray-600 text-base leading-snug mb-2 flex-grow">
-					Visualisasi ruang impian dengan teknologi AI canggih.
-					</p>
-			
-					<!-- Features List -->
-					<ul class="space-y-0.5 mb-2.5">
-					<li class="flex items-start gap-1 text-gray-700 text-sm">
-						<span class="text-secondary font-bold flex-shrink-0">✓</span>
-						<span>Rendering real-time</span>
-					</li>
-					<li class="flex items-start gap-1 text-gray-700 text-sm">
-						<span class="text-secondary font-bold flex-shrink-0">✓</span>
-						<span>Theme Customization</span>
-					</li>
-					</ul>
-				</div>
-			</div>
-		
-			<!-- Card 2: Smart Match (Featured) -->
-			<div class="group relative bg-gradient-to-br from-secondary to-yellow-400 border-2 border-secondary rounded-4xl p-8 transition-all duration-500 hover:shadow-lg hover:-translate-y-1 overflow-hidden animate-slide-in-up" style="animation-delay: 0.2s;">
-				<!-- Shine effect -->
-				<div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-					<div class="absolute -top-1/2 -right-1/2 w-full h-full bg-white/20 rounded-full blur-3xl"></div>
-				</div>
-			
-				<!-- Card content -->
-				<div class="relative z-10 h-full flex flex-col">
-					<!-- Icon -->
-					<div class="w-10 h-10 rounded-md bg-white/30 backdrop-blur-sm flex items-center justify-center text-xl mb-2 group-hover:scale-105 group-hover:rotate-6 transition-transform duration-300 flex-shrink-0">
-					🎯
-					</div>
-			
-					<!-- Title -->
-					<h3 class="text-lg font-bold text-white mb-1.5">
-					Smart Match
-					</h3>
-			
-					<!-- Main Description -->
-					<p class="text-white/95 text-base leading-snug mb-2 flex-grow">
-					Sistem AI cerdas menemukan furnitur sempurna sesuai gaya dan kebutuhan ruangmu.
-					</p>
-			
-					<!-- Features List -->
-					<ul class="space-y-0.5 mb-2.5">
-					<li class="flex items-start gap-1.5 text-white text-sm">
-						<span class="text-white font-bold flex-shrink-0">✓</span>
-						<span>10.000+ produk pilihan</span>
-					</li>
-					<li class="flex items-start gap-1.5 text-white text-sm">
-						<span class="text-white font-bold flex-shrink-0">✓</span>
-						<span>AI matching preferensi</span>
-					</li>
-					<li class="flex items-start gap-1.5 text-white text-sm">
-						<span class="text-white font-bold flex-shrink-0">✓</span>
-						<span>Budget-friendly options</span>
-					</li>
-					</ul>
-				</div>
-			</div>
-		
-			<!-- Card 3: Real Product -->
-			<div class="group relative bg-white/80 backdrop-blur-sm border border-primary/10 rounded-4xl p-8 transition-all duration-500 hover:shadow-lg hover:-translate-y-1 overflow-hidden animate-slide-in-up" style="animation-delay: 0.3s;">
-				<!-- Gradient overlay on hover -->
-				<div class="absolute inset-0 bg-gradient-to-br from-secondary/40 via-transparent to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg -z-10"></div>
-			
-				<!-- Card content -->
-				<div class="relative z-10 h-full flex flex-col">
-					<!-- Icon -->
-					<div class="w-10 h-10 rounded-md bg-gradient-to-br from-secondary to-yellow-400 flex items-center justify-center text-xl mb-2 group-hover:scale-105 group-hover:rotate-6 transition-transform duration-300 flex-shrink-0">
-					👁️
-					</div>
-			
-					<!-- Title -->
-					<h3 class="text-xl font-bold text-primary mb-1.5 group-hover:text-secondary transition-colors duration-300">
-					Real Product
-					</h3>
-			
-					<!-- Description -->
-					<p class="text-gray-600 text-base leading-snug mb-2 flex-grow">
-					Memberikan produk asli yang ada di e-commerce favorit kamu.
-					</p>
-			
-					<!-- Features List -->
-					<ul class="space-y-0.5 mb-2.5">
-					<li class="flex items-start gap-1 text-gray-700 text-sm">
-						<span class="text-secondary font-bold flex-shrink-0">✓</span>
-						<span>90% Match Product</span>
-					</li>
-					<li class="flex items-start gap-1 text-gray-700 text-sm">
-						<span class="text-secondary font-bold flex-shrink-0">✓</span>
-						<span>Realistic Product Images</span>
-					</li>
-					</ul>
-				</div>
-			</div>
-		
-			<!-- Card 4: Easy Shopping -->
-			<div class="group relative bg-white/80 backdrop-blur-sm border border-primary/10 rounded-4xl p-8 transition-all duration-500 hover:shadow-lg hover:-translate-y-1 overflow-hidden animate-slide-in-up" style="animation-delay: 0.4s;">
-				<!-- Gradient overlay on hover -->
-				<div class="absolute inset-0 bg-gradient-to-br from-secondary/40 via-transparent to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg -z-10"></div>
-			
-				<!-- Card content -->
-				<div class="relative z-10 h-full flex flex-col">
-					<!-- Icon -->
-					<div class="w-10 h-10 rounded-md bg-gradient-to-br from-secondary to-yellow-400 flex items-center justify-center text-xl mb-2 group-hover:scale-105 group-hover:rotate-6 transition-transform duration-300 flex-shrink-0">
-					🛒
-					</div>
-			
-					<!-- Title -->
-					<h3 class="text-xl font-bold text-primary mb-1.5 group-hover:text-secondary transition-colors duration-300">
-					Easy Shopping
-					</h3>
-			
-					<!-- Description -->
-					<p class="text-gray-600 text-base leading-snug mb-2 flex-grow">
-					Simpan, bandingkan, checkout produk seamless dari hasil redesign AI.
-					</p>
-			
-					<!-- Features List -->
-					<ul class="space-y-0.5 mb-2.5">
-					<li class="flex items-start gap-1 text-gray-700 text-sm">
-						<span class="text-secondary font-bold flex-shrink-0">✓</span>
-						<span>One-click wishlist</span>
-					</li>
-					<li class="flex items-start gap-1 text-gray-700 text-sm">
-						<span class="text-secondary font-bold flex-shrink-0">✓</span>
-						<span>Smart price comparison</span>
-					</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      {features.map(([title, body, icon], index) => (
+        <article class={`reveal rounded-[22px] border border-white/10 p-5 ${index === 1 ? "bg-[#ffb22c] text-[#261600]" : "bg-white/7"}`}>
+          <i class={`ti ${icon} text-3xl`}></i>
+          <h3 class="typeset-card-title mt-14">{title}</h3>
+          <p class={`mt-3 text-sm leading-7 tracking-[-0.01em] ${index === 1 ? "text-[#4e3000]" : "text-[#d7cdbf]"}`}>{body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
 </section>
-
-<style>
-  @keyframes fade-in-left {
-    from {
-      opacity: 0;
-      transform: translateX(-40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes fade-in-right {
-    from {
-      opacity: 0;
-      transform: translateX(40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes slide-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-fade-in-left {
-    animation: fade-in-left 0.8s ease-out;
-  }
-
-  .animate-fade-in-right {
-    animation: fade-in-right 0.8s ease-out 0.2s backwards;
-  }
-
-  .animate-slide-in-up {
-    animation: slide-in-up 0.6s ease-out backwards;
-  }
-
-  @media (max-width: 768px) {
-    @keyframes slide-in-up {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  }
-</style>

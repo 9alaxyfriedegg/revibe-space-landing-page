@@ -1,40 +1,21 @@
 ---
-import Reveal from "../motion/Reveal.astro";
-
 const items = [
-	{
-		name: "Belanja Langsung Mudah",
-		description: "Lihat hasil redesign ruangmu dan langsung beli semua produk yang digunakan tanpa ribet",
-		logo: "shopping-cart"
-	},
-	{
-		name: "Produk Nyata dan Terpercaya",
-		description: "Semua produk berasal dari katalog brand nyata, bukan sekadar hasil generate visual AI",
-		logo: "circle-check"
-	},
-	{
-		name: "Pilih Tema Ruangan",
-		description: "Tentukan style ruang sesuai selera, dari minimalis, modern, hingga aesthetic favoritmu",
-		logo: "palette"
-	},
-	{
-		name: "Pilih Jenis Ruangan",
-		description: "Pilih ruang yang ingin diubah, mulai dari kamar, ruang tamu, hingga workspace",
-		logo: "home"
-	}
+  ["Belanja Langsung", "Hasil redesign terhubung ke produk yang bisa dicari dan dibeli."],
+  ["Produk Nyata", "Rekomendasi dibuat untuk katalog brand dan marketplace, bukan dekor fiktif."],
+  ["Vibe Fleksibel", "Minimal modern, japandi cozy, colorful aesthetic, atau soft luxury."],
+  ["Ruang Harian", "Cocok untuk kamar kos, apartemen kecil, ruang keluarga, dan workspace."]
 ];
 ---
 
-<section class="px-8 py-12 mx-auto bg-primary border-y border-slate-300" aria-label="Trust Strip">
-	<div class="grid grid-cols-2 lg:grid-cols-4 px-3">
-		{items.map((item, index) => (
-			<Reveal delay={index * 0.1} className="flex flex-col py-4 px-8">
-				<div class="px-3 py-2 bg-secondary text-primary w-fit mb-2 rounded-xl text-2xl">
-					<i class={`ti ti-${item.logo}`}></i>
-				</div>
-				<h3 class="text-base font-bold text-white">{item.name}</h3>
-				<p class="text-sm font-light text-slate-100">{item.description}</p>
-			</Reveal>
+<section class="pb-8">
+  <div class="border-y border-black/10 py-5">
+    <div class="container-shell grid gap-3 md:grid-cols-4">
+		{items.map(([title, body]) => (
+		  <div class="reveal px-1">
+			<p class="typeset-kicker text-ink">{title}</p>
+			<p class="mt-2 max-w-[28ch] text-[0.96rem] leading-7 tracking-[-0.01em] text-[#675f56]">{body}</p>
+		  </div>
 		))}
+	  </div>
 	</div>
 </section>
