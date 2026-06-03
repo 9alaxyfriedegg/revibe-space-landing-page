@@ -8,14 +8,14 @@ const styles = [
 ---
 
 <section class="section-pad pt-8">
-  <div class="container-shell">
-    <div class="reveal max-w-[720px]">
+  <div class="container-shell flex flex-col lg:flex-row lg:gap-10 w-full">
+    <div class="reveal lg:sticky lg:top-28 lg:self-start max-w-[720px]">
       <div class="eyebrow"><i class="ti ti-palette"></i>Pilihan style</div>
       <h2 class="typeset-title mt-6">
         Pilih vibe yang paling dekat dengan hidupmu.
       </h2>
     </div>
-    <div class="mt-10 grid gap-4 md:grid-cols-4">
+    <div class="mt-10 grid gap-4 md:grid-cols-2">
       {styles.map(([title, text, image]) => (
         <article class="reveal group overflow-hidden rounded-[22px] border border-black/10 bg-[#fffaf1]/74">
           <img class="h-64 w-full object-cover transition duration-500 group-hover:scale-105" src={image} alt={`Contoh style ${title}`} />
